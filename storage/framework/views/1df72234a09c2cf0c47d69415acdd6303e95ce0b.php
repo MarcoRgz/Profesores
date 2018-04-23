@@ -18,30 +18,36 @@
                     <?php echo Form::model($profesor, ['route' => ['profesor.store'], 'method' => 'post']); ?>
 
                     <?php else: ?>
-                  <?php echo Form::open( ['route' => ['profesor.store'], 'method' =>'post']); ?>
+                  <?php echo Form::open( ['route' => ['profesor.store'], 'method' =>'post','style'=>'form-bootstrap'] ); ?>
 
                     <?php endif; ?>
                     <?php echo Form::label('nombre','  Nombre'); ?>
 
                     <?php echo Form::text('nombre', null); ?><br>
-                    <?php echo Form::label('apellido','Apellido'); ?>
+                    <?php echo Form::label('apellidoP','Apellido Paterno'); ?>
 
-                    <?php echo Form::text('apellido', null); ?><br>
+                    <?php echo Form::text('apellidoP', null); ?><br>
+                    <?php echo Form::label('apellidoM','Apellido Materno'); ?>
+
+                    <?php echo Form::text('apellidoM', null); ?><br>
                     <?php echo Form::label('centro','Centro'); ?>
 
                     <?php echo Form::text('centro', null); ?><br>
-                    <?php echo Form::label('division','Division'); ?>
-
-                    <?php echo Form::text('division', null); ?><br>
                     <?php echo Form::label('correo','Correo'); ?>
 
                     <?php echo Form::text('correo', null); ?><br>
+                    <?php echo Form::label('cargo','Cargo'); ?>
+
+                    <?php echo Form::text('cargo', null); ?><br>
+                    <?php echo Form::label('departamento','Departamento'); ?>
+
+                    <?php echo Form::text('departamento', null); ?><br>
                     <?php echo Form::label('celular','Celular'); ?>
 
                     <?php echo Form::text('celular', null); ?><br>
-                    <?php echo Form::label('redsocial','Red social'); ?>
+                    <?php echo Form::label('telExt','Telefono Extencion'); ?>
 
-                    <?php echo Form::text('redsocial', null); ?><br><br>
+                    <?php echo Form::text('telExt', null); ?><br><br>
 
                     <?php echo Form::submit('Aceptar', ['class' => 'btn btn-primary']); ?>
 

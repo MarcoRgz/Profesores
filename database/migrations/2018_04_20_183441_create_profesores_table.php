@@ -13,17 +13,19 @@ class CreateProfesoresTable extends Migration
      */
     public function up()
     {
-      Schema::create('profesores', function (Blueprint $table) {
+        Schema::create('profesores', function (Blueprint $table) {
           $table->increments('id');
           $table->string('nombre');
-          $table->string('apellido');
+          $table->string('apellidoP');
+          $table->string('apellidoM');
           $table->string('centro');
-          $table->string('division');
           $table->string('correo');
+          $table->string('cargo');
+          $table->string('departamento');
           $table->string('celular');
-          $table->string('redsocial');
+          $table->string('telExt');
           $table->timestamps();
-      });
+        });
     }
 
     /**

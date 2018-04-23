@@ -16,8 +16,8 @@ class profesorController extends Controller
      */
     public function index(Request $request)
     {
-
-
+         $profesor = Profesor::all();
+        return view('profesores/profesores', compact('profesor'));
     }
 
     /**
@@ -39,7 +39,7 @@ class profesorController extends Controller
     public function store(Request $request)
     {
       Profesor::create($request->input());
-      return('prueba');
+      return view ('profesores/profesor');
     }
 
     /**
@@ -50,7 +50,7 @@ class profesorController extends Controller
      */
     public function show($id)
     {
-        //
+          return view ('profesores.showProfesor');
     }
 
     /**

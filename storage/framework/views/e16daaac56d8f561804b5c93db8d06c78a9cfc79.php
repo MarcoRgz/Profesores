@@ -1,40 +1,48 @@
 <?php $__env->startSection('content'); ?>
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-
-          <?php if($errors->any()): ?>
-          <ul class="alert alert-danger">
-            <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-              <li><?php echo e($error); ?></li>
-              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-          </ul>
-    <?php endif; ?>
+        <div class="col-md-15 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Registro profesores</div>
+                <div class="panel-heading">Programa carreras</div>
+
                 <div class="panel-body">
-                  <form>
-                    <?php if(isset($profesor)): ?>
-                      <?php echo Form::model($profesor, ['route' => ['profesor.create',
-                       $profesor->id], 'method' => 'patch']); ?>
+                 <?php if($profesor): ?>
+                  <table class="table table-striped">
+                 <thead>
+                     <th>id</th>
+                     <th>nombre</th>
+                     <th>Apellido Paterno</th>
+                     <th>Apellido Materno</th>
+                     <th>Centro</th>
+                     <th>Correo</th>
+                     <th>Cargo</th>
+                     <th>Departamento</th>
+                     <th>Celular</th>
+                     <th>Telefono - Ext</th>
+                     <th>Fecha creacion</th>
+                   </thead>
 
-                      <?php else: ?>
-                    <?php echo Form::open(['route' => 'profesor.store']); ?>
-
-                      <?php endif; ?>
-                      <?php echo Form::label('nombre','  Nombre'); ?>
-
-                      <?php echo Form::text('nombre', null); ?><br>
-                      <?php echo Form::label('apellido','Apellido'); ?>
-
-                      <?php echo Form::text('apellido', null); ?><br>
-                      <?php echo Form::submit('Aceptar', ['class' => 'btn btn-primary']); ?>
-
-                      <?php echo Form::close(); ?>
-
-                  </form>
+                   <tr>
+                     <?php $__currentLoopData = $profesor; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                       <td><?php echo e($row->id); ?></td>
+                       <td><?php echo e($row->nombre); ?></td>
+                        <td><?php echo e($row->apellidoP); ?></td>
+                        <td><?php echo e($row->apellidoM); ?></td>
+                        <td><?php echo e($row->centro); ?></td>
+                        <td><?php echo e($row->correo); ?></td>
+                        <td><?php echo e($row->cargo); ?></td>
+                        <td><?php echo e($row->departamento); ?></td>
+                        <td><?php echo e($row->celular); ?></td>
+                        <td><?php echo e($row->telExt); ?></td>
+                        <td><?php echo e($row->created_at); ?></td>
+                     </tr>
+                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                 </table>
+                 <?php endif; ?>
                 </div>
             </div>
+            <a href="<?php echo e(route('profesor.create')); ?>" class="btn btn-success"> Crear mi ficha </a>
+
         </div>
     </div>
 </div>
