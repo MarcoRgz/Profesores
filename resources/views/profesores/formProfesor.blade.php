@@ -17,27 +17,27 @@
                 <div class="panel-body">
 
                   @if(isset($profesor))
-                    {!! Form::model($profesor, ['route' => ['profesor.store'], 'method' => 'post']) !!}
+                    {!! Form::model($profesor, ['route' => ['profesor.update', $profesor->nombre], 'method' => 'post']) !!}
                     @else
                   {!! Form::open( ['route' => ['profesor.store'], 'method' =>'post','style'=>'form-bootstrap'] ) !!}
                     @endif
                     {!! Form::label('nombre','  Nombre') !!}
-                    {!! Form::text('nombre', null) !!}<br>
+                    {!! Form::text('nombre', null) !!}
                     {!! Form::label('apellidoP','Apellido Paterno') !!}
-                    {!! Form::text('apellidoP', null) !!}<br>
+                    {!! Form::text('apellidoP', null) !!}
                     {!! Form::label('apellidoM','Apellido Materno') !!}
-                    {!! Form::text('apellidoM', null) !!}<br>
+                    {!! Form::text('apellidoM', null) !!}
                     {!! Form::label('centro','Centro') !!}
-                    {!! Form::text('centro', null) !!}<br>
+                    {!! Form::text('centro', null) !!}
                     {!! Form::label('correo','Correo') !!}
-                    {!! Form::text('correo', null) !!}<br>
+                    {!! Form::text('correo', null) !!}
                     {!! Form::label('cargo','Cargo') !!}
-                    {!! Form::text('cargo', null) !!}<br>
+                    {!! Form::text('cargo', null) !!}
                     {!! Form::label('departamento','Departamento') !!}
-                    {!! Form::text('departamento', null) !!}<br>
+                    {!! Form::text('departamento', null) !!}
                     {!! Form::label('celular','Celular') !!}
-                    {!! Form::text('celular', null) !!}<br>
-                    {!! Form::label('telExt','Telefono Extencion') !!}
+                    {!! Form::text('celular', null) !!}
+                    {!! Form::label('telExt','Telefono Extension') !!}
                     {!! Form::text('telExt', null) !!}<br><br>
 
                     {!! Form::submit('Aceptar', ['class' => 'btn btn-primary']) !!}

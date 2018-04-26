@@ -15,7 +15,7 @@
                 <div class="panel-body">
 
                   <?php if(isset($profesor)): ?>
-                    <?php echo Form::model($profesor, ['route' => ['profesor.store'], 'method' => 'post']); ?>
+                    <?php echo Form::model($profesor, ['route' => ['profesor.update', $profesor->nombre], 'method' => 'post']); ?>
 
                     <?php else: ?>
                   <?php echo Form::open( ['route' => ['profesor.store'], 'method' =>'post','style'=>'form-bootstrap'] ); ?>
@@ -23,29 +23,37 @@
                     <?php endif; ?>
                     <?php echo Form::label('nombre','  Nombre'); ?>
 
-                    <?php echo Form::text('nombre', null); ?><br>
+                    <?php echo Form::text('nombre', null); ?>
+
                     <?php echo Form::label('apellidoP','Apellido Paterno'); ?>
 
-                    <?php echo Form::text('apellidoP', null); ?><br>
+                    <?php echo Form::text('apellidoP', null); ?>
+
                     <?php echo Form::label('apellidoM','Apellido Materno'); ?>
 
-                    <?php echo Form::text('apellidoM', null); ?><br>
+                    <?php echo Form::text('apellidoM', null); ?>
+
                     <?php echo Form::label('centro','Centro'); ?>
 
-                    <?php echo Form::text('centro', null); ?><br>
+                    <?php echo Form::text('centro', null); ?>
+
                     <?php echo Form::label('correo','Correo'); ?>
 
-                    <?php echo Form::text('correo', null); ?><br>
+                    <?php echo Form::text('correo', null); ?>
+
                     <?php echo Form::label('cargo','Cargo'); ?>
 
-                    <?php echo Form::text('cargo', null); ?><br>
+                    <?php echo Form::text('cargo', null); ?>
+
                     <?php echo Form::label('departamento','Departamento'); ?>
 
-                    <?php echo Form::text('departamento', null); ?><br>
+                    <?php echo Form::text('departamento', null); ?>
+
                     <?php echo Form::label('celular','Celular'); ?>
 
-                    <?php echo Form::text('celular', null); ?><br>
-                    <?php echo Form::label('telExt','Telefono Extencion'); ?>
+                    <?php echo Form::text('celular', null); ?>
+
+                    <?php echo Form::label('telExt','Telefono Extension'); ?>
 
                     <?php echo Form::text('telExt', null); ?><br><br>
 

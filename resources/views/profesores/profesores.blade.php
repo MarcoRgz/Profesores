@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-15 col-md-offset-2">
+        <div class="col-md-15 col-md-offset-3">
             <div class="panel panel-default">
-                <div class="panel-heading">Programa carreras</div>
+                <div class="panel-heading">Informacion General </div>
 
                 <div class="panel-body">
                  @if($profesor)
@@ -26,8 +26,8 @@
 
                    <tr>
                      @foreach($profesor as $row)
-                       <td>{{ $row->id}}</td>
-                       <td>{{ $row->nombre}}</td>
+                       <td>{{ $row->id}}</td></a>
+                       <td><a href="{{ route('skills.index', $row->id) }}">{{ $row->nombre}}</td></a>
                         <td>{{ $row->apellidoP}}</td>
                         <td>{{ $row->apellidoM}}</td>
                         <td>{{ $row->centro}}</td>

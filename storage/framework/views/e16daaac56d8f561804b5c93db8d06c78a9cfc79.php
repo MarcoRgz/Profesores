@@ -1,9 +1,9 @@
 <?php $__env->startSection('content'); ?>
 <div class="container">
     <div class="row">
-        <div class="col-md-15 col-md-offset-2">
+        <div class="col-md-15 col-md-offset-3">
             <div class="panel panel-default">
-                <div class="panel-heading">Programa carreras</div>
+                <div class="panel-heading">Informacion General </div>
 
                 <div class="panel-body">
                  <?php if($profesor): ?>
@@ -24,8 +24,8 @@
 
                    <tr>
                      <?php $__currentLoopData = $profesor; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                       <td><?php echo e($row->id); ?></td>
-                       <td><?php echo e($row->nombre); ?></td>
+                       <td><?php echo e($row->id); ?></td></a>
+                       <td><a href="<?php echo e(route('skills.index', $row->id)); ?>"><?php echo e($row->nombre); ?></td></a>
                         <td><?php echo e($row->apellidoP); ?></td>
                         <td><?php echo e($row->apellidoM); ?></td>
                         <td><?php echo e($row->centro); ?></td>

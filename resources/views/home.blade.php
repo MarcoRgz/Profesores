@@ -12,9 +12,9 @@
                     <h1>Menu</h1>
                   </div>
                     <div class="card-body">
-                    <a href="{{ route('profesor.create') }}" class="btn btn-success"> Crear mi ficha </a>
+                    <a href="{{ route('profesor.create') }}" class="btn btn-success btn-block"> Registrar mis datos</a>
                     <br> <br>
-                      <a href="{{ route('profesor.index') }}" class="btn btn-primary"> Ver fichas </a>
+                      <a href="{{ route('profesor.index') }}" class="btn btn-primary btn-block"> Ver  Profesores   </a>
                     </div>
 
                   </div>

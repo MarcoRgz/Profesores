@@ -3,21 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Profesor;
-use Illuminate\Support\Facades\Redirect;
-use profesore\Http\Request\profesoresFormRequest;
-use DB;
-class profesorController extends Controller
+
+class skillsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-         $profesor = Profesor::all();
-        return view('profesores/profesores', compact('profesor'));
+        return view("skills/skills");
     }
 
     /**
@@ -25,9 +21,9 @@ class profesorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-      return view('profesores/formProfesor');
+        //
     }
 
     /**
@@ -38,8 +34,7 @@ class profesorController extends Controller
      */
     public function store(Request $request)
     {
-      Profesor::create($request->input());
-      return view ('profesores/profesor');
+       
     }
 
     /**
@@ -50,7 +45,7 @@ class profesorController extends Controller
      */
     public function show($id)
     {
-          return view ('profesores.profesor');
+        //
     }
 
     /**
@@ -73,11 +68,8 @@ class profesorController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $profesor->nombre = $request->input('profesor');
-     $profesor->save();
-
-     return redirect()->route('profesor.show',$profesor->id);
-   }
+        //
+    }
 
     /**
      * Remove the specified resource from storage.
