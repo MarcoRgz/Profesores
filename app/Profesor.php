@@ -10,9 +10,23 @@ class Profesor extends Model
     protected $primariKey= 'id';
     public $guarded= ['id'];
 
-  
+
     public function profesor()
  {
     return $this->belongsTo('App\Profesor');
  }
+
+    public function user ()
+    {
+      return $this->hasMany('App\User');
+    }
+
+    public function handle($request, Closure $next, $role)
+{
+    if (! $request->user()->hasRole($role)) {
+        return redirect('welcome');
+    }
+return $next($request);
+}
+
 }

@@ -43,7 +43,7 @@
                  @endif
                 </div>
             </div>
-            <a href="{{ route('profesor.create') }}" class="btn btn-success"> Crear mi ficha </a>
+            <a href="{{ route('skills.index') }}" class="btn btn-success"> Crear mi ficha </a>
 
         </div>
     </div>

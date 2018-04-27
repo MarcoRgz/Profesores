@@ -41,7 +41,7 @@
                  <?php endif; ?>
                 </div>
             </div>
-            <a href="<?php echo e(route('profesor.create')); ?>" class="btn btn-success"> Crear mi ficha </a>
+            <a href="<?php echo e(route('skills.index')); ?>" class="btn btn-success"> Crear mi ficha </a>
 
         </div>
     </div>
