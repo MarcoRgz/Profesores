@@ -24,7 +24,7 @@ class Profesor extends Model
     public function handle($request, Closure $next, $role)
 {
     if (! $request->user()->hasRole($role)) {
-        return redirect('welcome');
+        return redirect('wel');
     }
 return $next($request);
 }

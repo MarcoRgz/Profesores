@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class skillsController extends Controller
 {
+
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
+
     /**
      * Display a listing of the resource.
      *
@@ -34,7 +40,7 @@ class skillsController extends Controller
      */
     public function store(Request $request)
     {
-       
+
     }
 
     /**

@@ -1,9 +1,10 @@
-@extends('layouts.app')
+  @extends('layouts.app')
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col-md-2 col-md-offset-2">
+  <div class="row">
+
+
 
           @if($errors->any())
           <ul class="alert alert-danger">
@@ -12,39 +13,58 @@
               @endforeach
           </ul>
     @endif
-            <div class="panel panel-default">
-                <div class="panel-heading">Registro ficha</div><br>
-                <div class="panel-body">
+
+                <div class="form-horizontal" style="margin = 0 auto">
+                  <h3>Datos personales</h3>
+
+                <br>
+
 
                   @if(isset($profesor))
                     {!! Form::model($profesor, ['route' => ['profesor.update', $profesor->nombre], 'method' => 'post']) !!}
                     @else
-                  {!! Form::open( ['route' => ['profesor.store'], 'method' =>'post','style'=>'form-bootstrap'] ) !!}
+                  {!! Form::open( ['route' => ['profesor.store'], 'method' =>'post','class'=>'form-control-lg'] ) !!}
                     @endif
-                    {!! Form::label('nombre','  Nombre') !!}
-                    {!! Form::text('nombre', null) !!}
-                    {!! Form::label('apellidoP','Apellido Paterno') !!}
-                    {!! Form::text('apellidoP', null) !!}
-                    {!! Form::label('apellidoM','Apellido Materno') !!}
-                    {!! Form::text('apellidoM', null) !!}
-                    {!! Form::label('centro','Centro') !!}
-                    {!! Form::text('centro', null) !!}
-                    {!! Form::label('correo','Correo') !!}
-                    {!! Form::text('correo', null) !!}
-                    {!! Form::label('cargo','Cargo') !!}
-                    {!! Form::text('cargo', null) !!}
-                    {!! Form::label('departamento','Departamento') !!}
-                    {!! Form::text('departamento', null) !!}
-                    {!! Form::label('celular','Celular') !!}
-                    {!! Form::text('celular', null) !!}
-                    {!! Form::label('telExt','Telefono Extension') !!}
-                    {!! Form::text('telExt', null) !!}<br><br>
+                    <div class="row">
 
-                    {!! Form::submit('Aceptar', ['class' => 'btn btn-primary']) !!}
-                    {!! Form::close()!!}
-                          </div>
-            </div>
+
+                    <div class="col-lg-4 col-center-block">
+                      {!! Form::label('nombre','  Nombre') !!}<br>
+                      {!! Form::text('nombre', null) !!}<br>
+                      {!! Form::label('apellidoP','Apellido Paterno') !!}<br>
+                      {!! Form::text('apellidoP', null) !!}<br>
+                      {!! Form::label('apellidoM','Apellido Materno') !!}<br>
+                      {!! Form::text('apellidoM', null) !!}
+                    </div>
+                    <br>
+
+
+                      <div class="col-lg-4 col-center-block">
+                      {!! Form::label('centro','Centro') !!}<br>
+                      {!! Form::text('centro', null) !!}<br>
+                      {!! Form::label('correo','Correo') !!}<br>
+                      {!! Form::text('correo', null) !!}<br>
+                      {!! Form::label('cargo','Cargo') !!}<br>
+                      {!! Form::text('cargo', null) !!}<br>
+                    </div>
+
+
+
+                    <div class="col-lg-4 col-center-block">
+                    {!! Form::label('departamento','Departamento') !!}<br>
+                    {!! Form::text('departamento', null) !!}<br>
+                    {!! Form::label('celular','Celular') !!}<br>
+                    {!! Form::text('celular', null) !!}<br>
+                    {!! Form::label('telExt','Telefono Extension') !!}<br>
+                    {!! Form::text('telExt', null) !!}<br>
+                  </div>
+
+                                    </div>
+                                    {!! Form::submit('Siguiente', ['class' => 'btn btn-outline-primary btn-block']) !!}
+                                    {!! Form::close()!!}
+          </div>
         </div>
-    </div>
-</div>
+
+
+
 @endsection

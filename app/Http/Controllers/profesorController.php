@@ -9,6 +9,11 @@ use profesore\Http\Request\profesoresFormRequest;
 use DB;
 class profesorController extends Controller
 {
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
+
     /**
      * Display a listing of the resource.
      *

@@ -13,6 +13,8 @@
                     <a href="<?php echo e(route('profesor.create')); ?>" class="btn btn-success btn-block"> Registrar mis datos</a>
                     <br> <br>
                       <a href="<?php echo e(route('profesor.index')); ?>" class="btn btn-primary btn-block"> Ver  Profesores   </a>
+                      <br> <br>
+                      <a href="<?php echo e(route('profesor.index')); ?>" class="btn btn-primary btn-block"> Ver Habilidades de Profesores   </a>
                     </div>
 
                   </div>

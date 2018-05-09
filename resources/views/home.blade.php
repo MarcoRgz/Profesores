@@ -15,6 +15,8 @@
                     <a href="{{ route('profesor.create') }}" class="btn btn-success btn-block"> Registrar mis datos</a>
                     <br> <br>
                       <a href="{{ route('profesor.index') }}" class="btn btn-primary btn-block"> Ver  Profesores   </a>
+                      <br> <br>
+                      <a href="{{ route('profesor.index') }}" class="btn btn-primary btn-block"> Ver Habilidades de Profesores   </a>
                     </div>
 
                   </div>

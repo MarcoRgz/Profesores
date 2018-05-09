@@ -21,3 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/carrera','carreraController');
 Route::resource('/profesor','profesorController');
 Route::resource('/skills', 'skillsController');
+Route::put('post/{id}', function ($id) {
+    //
+})->middleware('auth', 'role:admin');
