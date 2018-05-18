@@ -60,8 +60,11 @@
                   </div>
 
                                     </div>
-                                    {!! Form::submit('Siguiente', ['class' => 'btn btn-outline-primary btn-block']) !!}
-                                    {!! Form::close()!!}
+                                    <br>
+                                    <br>
+                            
+                    {!! Form::submit('Siguiente', ['class' => 'btn btn-outline-primary btn-block']) !!}
+                    {!! Form::close()!!}
           </div>
         </div>
 

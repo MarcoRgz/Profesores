@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Skills;
+use DB;
 
 class skillsController extends Controller
 {
@@ -17,9 +19,10 @@ class skillsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view("skills/skills");
+        $skill = Skills::all();
+        return view("skills/skills", compact('skill'));
     }
 
     /**
@@ -38,9 +41,10 @@ class skillsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $skill)
     {
-
+      Skills::create($request->input());
+      return view ('skills/formSkills ', compact('skill'));
     }
 
     /**
@@ -74,7 +78,8 @@ class skillsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $skill->nombre = $request->input('skills');
+     $skill->save();
     }
 
     /**
@@ -87,4 +92,5 @@ class skillsController extends Controller
     {
         //
     }
+
 }

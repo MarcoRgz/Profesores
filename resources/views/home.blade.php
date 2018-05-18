@@ -16,7 +16,7 @@
                     <br> <br>
                       <a href="{{ route('profesor.index') }}" class="btn btn-primary btn-block"> Ver  Profesores   </a>
                       <br> <br>
-                      <a href="{{ route('profesor.index') }}" class="btn btn-primary btn-block"> Ver Habilidades de Profesores   </a>
+                      <a href="{{ route('skills.index') }}" class="btn btn-primary btn-block"> Ver Habilidades de Profesores   </a>
                     </div>
 
                   </div>

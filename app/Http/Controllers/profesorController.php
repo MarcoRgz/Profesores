@@ -23,6 +23,8 @@ class profesorController extends Controller
     {
          $profesor = Profesor::all();
         return view('profesores/profesores', compact('profesor'));
+
+
     }
 
     /**
@@ -41,10 +43,11 @@ class profesorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $skill)
     {
+
       Profesor::create($request->input());
-      return view ('profesores/profesor');
+      return view ('skills/skills ', compact('skill'));
     }
 
     /**
@@ -55,7 +58,7 @@ class profesorController extends Controller
      */
     public function show($id)
     {
-          return view ('profesores.profesor');
+          return view ('home');
     }
 
     /**
@@ -81,7 +84,7 @@ class profesorController extends Controller
       $profesor->nombre = $request->input('profesor');
      $profesor->save();
 
-     return redirect()->route('profesor.show',$profesor->id);
+     return redirect()->route('skills/skills',$profesor->id);
    }
 
     /**
@@ -94,4 +97,5 @@ class profesorController extends Controller
     {
         //
     }
+
 }
