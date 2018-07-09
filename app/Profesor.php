@@ -29,4 +29,9 @@ class Profesor extends Model
 return $next($request);
 }
 
+public function setCarreraAttribute($value)
+{
+  $this->attributes['nombre'] = strtoupper($value);
+}
+
 }

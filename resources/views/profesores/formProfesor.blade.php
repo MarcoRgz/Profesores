@@ -21,9 +21,9 @@
 
 
                   @if(isset($profesor))
-                    {!! Form::model($profesor, ['route' => ['profesor.update', $profesor->nombre], 'method' => 'post']) !!}
+                    {!! Form::model($profesor, ['route' => ['profesor.update', $profesor->id], 'method' => 'patch']) !!}
                     @else
-                  {!! Form::open( ['route' => ['profesor.store'], 'method' =>'post','class'=>'form-control-lg'] ) !!}
+                  {!! Form::open( ['route' => ['profesor.store'],'class'=>'form-control-lg'] ) !!}
                     @endif
                     <div class="row">
 
@@ -57,17 +57,32 @@
                     {!! Form::text('celular', null) !!}<br>
                     {!! Form::label('telExt','Telefono Extension') !!}<br>
                     {!! Form::text('telExt', null) !!}<br>
+                    <br>
+                    <br>
+                  </div>
+                  <br>
+                  <br>
+
+                      <div class="col-lg-5 col-center-block">
+                      <h3>Habilidades </h3>
+                      <br>
+                    {!! Form::label('skill','Habilidad') !!}<br>
+                    {!! Form::text('skill', null) !!}<br>
+                    {!! Form::label('especialidad','Especialidad') !!}<br>
+                    {!! Form::text('especialidad', null) !!}<br>
+                    {!! Form::label('extra',' Extras') !!}<br>
+                    {!! Form::text('extra', null) !!}<br>
                   </div>
 
                                     </div>
                                     <br>
                                     <br>
-                            
+
                     {!! Form::submit('Siguiente', ['class' => 'btn btn-outline-primary btn-block']) !!}
                     {!! Form::close()!!}
           </div>
         </div>
-
+</div>
 
 
 @endsection

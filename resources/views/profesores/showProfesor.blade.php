@@ -2,54 +2,41 @@
 
 @section('content')
 
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
-
-<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
 
 <div class="container">
 
     <div class="row">
-        <div class="col-md-15 col-md-offset-2">
+        <div class="col-md-12 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Programa carreras</div>
 
                 <div class="panel-body">
                  @if($profesor)
-                  <table class="table table-striped">
+                  <table class="table table-hover ">
                  <thead>
-                     <th>id</th>
-                     <th>nombre</th>
-                     <th>Apellido Paterno</th>
-                     <th>Apellido Materno</th>
-                     <th>Centro</th>
-                     <th>Correo</th>
-                     <th>Cargo</th>
-                     <th>Departamento</th>
-                     <th>Celular</th>
-                     <th>Telefono - Ext</th>
-                     <th>Fecha creacion</th>
+                     <th>ID</th>
+                     <th>Nombre</th>
+                     <th>Habilidad</th>
+                     <th>Especialidad</th>
+                     <th>Extra</th>
                    </thead>
 
                    <tr>
-                     @foreach($profesor as $row)
-                       <td>{{ $row->id}}</td></a>
-                       <td><a href="{{ route('skills', $row->id) }}">{{ $row->nombre}}</td></a>
-                        <td>{{ $row->apellidoP}}</td>
-                        <td>{{ $row->apellidoM}}</td>
-                        <td>{{ $row->centro}}</td>
-                        <td>{{ $row->correo}}</td>
-                        <td>{{ $row->cargo}}</td>
-                        <td>{{ $row->departamento}}</td>
-                        <td>{{ $row->celular}}</td>
-                        <td>{{ $row->telExt}}</td>
-                        <td>{{ $row->created_at}}</td>
+
+                       <td>{{ $profesor->id}}</td>
+                       <td>{{ $profesor->nombre}}</td>
+                       <td>{{ $profesor->skill}}</td>
+                       <td>{{ $profesor->especialidad}}</td>
+                       <td>{{ $profesor->extra}}</td>
+
+
                      </tr>
-                     @endforeach
                  </table>
                  @endif
                 </div>
             </div>
-            <a href="{{ route('profesor.create') }}" class="btn btn-success"> Crear mi ficha </a>
+            <br><br>
+            <a href="{{ route('profesor.index') }}" class="btn btn-outline-primary btn-block"> Inicio </a>
 
         </div>
     </div>

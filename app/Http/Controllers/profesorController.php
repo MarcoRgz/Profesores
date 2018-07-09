@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Profesor;
+use App\Skills;
 use Illuminate\Support\Facades\Redirect;
 use profesore\Http\Request\profesoresFormRequest;
 use DB;
@@ -19,7 +20,7 @@ class profesorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
          $profesor = Profesor::all();
         return view('profesores/profesores', compact('profesor'));
@@ -32,7 +33,7 @@ class profesorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
       return view('profesores/formProfesor');
     }
@@ -43,11 +44,12 @@ class profesorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $skill)
+    public function store(Request $request)
     {
 
       Profesor::create($request->input());
-      return view ('skills/skills ', compact('skill'));
+      $profesor = Profesor::all();
+      return view ('profesores/profesores ', compact('profesor'));
     }
 
     /**
@@ -56,9 +58,10 @@ class profesorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Profesor $profesor)
     {
-          return view ('home');
+
+      return view('profesores/showProfesor', compact('profesor'));
     }
 
     /**

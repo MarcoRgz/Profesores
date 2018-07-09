@@ -69,7 +69,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/profesor/show') }}">Inicio</a>
+                        <a href="{{ route('profesor.index') }}">Inicio</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
@@ -78,14 +78,21 @@
             @endif
 
             <div class="content">
+
+
                 <div class="title m-b-md">
                     Profesores
+
                 </div>
 
                 <div class="links">
 
+                    <a href="{{ route('profesor.create') }}" > Registrar mis datos</a>
+                      <a href="{{ route('profesor.index') }}" class="btn btn-primary btn-block"> Ver  Profesores   </a>
                 </div>
+
             </div>
         </div>
+
     </body>
 </html>

@@ -16,7 +16,7 @@
     <h3 align="center">Profesores Registrados</h3>
     <br/>
     @if($profesor)
-     <table class="table table-striped" id='table'>
+     <table class="table table-striped " id='table'>
     <thead>
       <tr>
         <th>id</th>
@@ -29,37 +29,37 @@
         <th>Departamento</th>
         <th>Celular</th>
         <th>Telefono - Ext</th>
-        <th>Fecha creacion</th>
         </tr>
       </thead>
 
       <tbody>
 
-        @foreach($profesor as $row)
+        @foreach($profesor as $profesores)
         <tr>
 
-           <td>{{ $row->id}}</td></a>
-           <td><a href="{{ route('skills.index') }}">{{ $row->nombre}}</td></a>
-           <td>{{ $row->apellidoP}}</td>
-           <td>{{ $row->apellidoM}}</td>
-           <td>{{ $row->centro}}</td>
-           <td>{{ $row->correo}}</td>
-           <td>{{ $row->cargo}}</td>
-           <td>{{ $row->departamento}}</td>
-           <td>{{ $row->celular}}</td>
-           <td>{{ $row->telExt}}</td>
-           <td>{{ $row->created_at}}</td>
+           <td>{{ $profesores->id}}</td></a>
+           <td><a href="{{ route('profesor.show', $profesores->id) }}">{{ $profesores->nombre}}</td></a>
+           <td>{{ $profesores->apellidoP}}</td>
+           <td>{{ $profesores->apellidoM}}</td>
+           <td>{{ $profesores->centro}}</td>
+           <td>{{ $profesores->correo}}</td>
+           <td>{{ $profesores->cargo}}</td>
+           <td>{{ $profesores->departamento}}</td>
+           <td>{{ $profesores->celular}}</td>
+           <td>{{ $profesores->telExt}}</td>
          </tr>
 
         @endforeach
         </tbody>
     </table>
     @endif
+    <br><br>
+    <a href="{{ route('home') }}" class="btn btn-primary btn-block "> Inicio </a>
+
    </div>
 
 </div>
 <br>
-<a href="{{ route('home') }}" class="btn btn-success btn btn-block"> Inicio </a>
 
 </div>
   </div>
