@@ -64,10 +64,12 @@
 </div>
   </div>
 
-  <script>
-  $(document).ready( function () {
-      $('#table').DataTable();
-  } );
-  </script>
+    <script>
+          $(document).ready( function ()
+          {
+            $('#table').DataTable();
+          } );
+    </script>
+
 </body>
 </html>
